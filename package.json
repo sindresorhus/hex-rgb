@@ -1,0 +1,33 @@
+{
+  "name": "hex-rgb",
+  "version": "0.0.0",
+  "description": "Convert HEX color to RGB",
+  "license": "MIT",
+  "repository": "sindresorhus/hex-rgb",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "http://sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "hex",
+    "rgb",
+    "color",
+    "colour",
+    "convert",
+    "conversion",
+    "converter"
+  ],
+  "devDependencies": {
+    "ava": "0.0.3"
+  }
+}
