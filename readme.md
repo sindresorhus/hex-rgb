@@ -1,6 +1,6 @@
 # hex-rgb [![Build Status](https://travis-ci.org/sindresorhus/hex-rgb.svg?branch=master)](https://travis-ci.org/sindresorhus/hex-rgb)
 
-> Convert HEX color to RGB
+> Convert HEX color to RGB(A)
 
 
 ## Install
@@ -23,6 +23,12 @@ hexRgb('#4183c4');
 
 hexRgb('#fff');
 //=> [255, 255, 255]
+
+hexRgb('#4183c488');
+//=> [65, 131, 196, 136]
+
+hexRgb('#0008');
+//=> [0, 0, 0, 136]
 ```
 
 

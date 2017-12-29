@@ -1,7 +1,7 @@
 {
   "name": "hex-rgb",
   "version": "1.0.0",
-  "description": "Convert HEX color to RGB",
+  "description": "Convert HEX color to RGB(A)",
   "license": "MIT",
   "repository": "sindresorhus/hex-rgb",
   "author": {
@@ -21,6 +21,7 @@
   "keywords": [
     "hex",
     "rgb",
+    "rgba",
     "color",
     "colour",
     "convert",
