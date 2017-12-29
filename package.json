@@ -10,10 +10,10 @@
     "url": "http://sindresorhus.com"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=6"
   },
   "scripts": {
-    "test": "node test.js"
+    "test": "xo && ava"
   },
   "files": [
     "index.js"
@@ -28,6 +28,7 @@
     "converter"
   ],
   "devDependencies": {
-    "ava": "0.0.3"
+    "ava": "*",
+    "xo": "*"
   }
 }
