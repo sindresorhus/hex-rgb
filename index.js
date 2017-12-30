@@ -31,10 +31,5 @@ module.exports = function (hex) {
 
 	const num = parseInt(hex, 16);
 	// eslint-disable-next-line no-mixed-operators
-	const result = [num >> 16, num >> 8 & 255, num & 255];
-	if (alpha !== 255) {
-		result.push(alpha);
-	}
-
-	return result;
+	return [num >> 16, num >> 8 & 255, num & 255, alpha];
 };

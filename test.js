@@ -19,14 +19,14 @@ test('rejects', t => {
 });
 
 test('hex', t => {
-	t.deepEqual(hexRgb('4183c4'), [65, 131, 196]);
-	t.deepEqual(hexRgb('#4183c4'), [65, 131, 196]);
-	t.deepEqual(hexRgb('#000'), [0, 0, 0]);
+	t.deepEqual(hexRgb('4183c4'), [65, 131, 196, 255]);
+	t.deepEqual(hexRgb('#4183c4'), [65, 131, 196, 255]);
+	t.deepEqual(hexRgb('#000'), [0, 0, 0, 255]);
 });
 
 test('hex with alpha', t => {
 	t.deepEqual(hexRgb('4183c488'), [65, 131, 196, 136]);
 	t.deepEqual(hexRgb('#4183c488'), [65, 131, 196, 136]);
 	t.deepEqual(hexRgb('#0008'), [0, 0, 0, 136]);
-	t.deepEqual(hexRgb('#000f'), [0, 0, 0]);
+	t.deepEqual(hexRgb('#000f'), [0, 0, 0, 255]);
 });
