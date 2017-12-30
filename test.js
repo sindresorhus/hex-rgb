@@ -1,6 +1,5 @@
-'use strict';
 import test from 'ava';
-import hexRgb from './';
+import hexRgb from '.';
 
 const reject = (t, string) => {
 	return t.throws(() => {

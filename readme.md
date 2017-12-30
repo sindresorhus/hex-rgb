@@ -1,19 +1,19 @@
 # hex-rgb [![Build Status](https://travis-ci.org/sindresorhus/hex-rgb.svg?branch=master)](https://travis-ci.org/sindresorhus/hex-rgb)
 
-> Convert HEX color to RGB(A)
+> Convert HEX color to RGBA
 
 
 ## Install
 
-```sh
-$ npm install --save hex-rgb
+```
+$ npm install hex-rgb
 ```
 
 
 ## Usage
 
 ```js
-var hexRgb = require('hex-rgb');
+const hexRgb = require('hex-rgb');
 
 hexRgb('4183c4');
 //=> {red: 65, green: 131, blue: 196, alpha: 255}
@@ -42,4 +42,4 @@ See [rgb-hex](https://github.com/sindresorhus/rgb-hex) for the inverse.
 
 ## License
 
-MIT © [Sindre Sorhus](http://sindresorhus.com)
+MIT © [Sindre Sorhus](https://sindresorhus.com)
