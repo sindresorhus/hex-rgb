@@ -1,10 +1,14 @@
 'use strict';
+
+const hexChars = 'a-f\\d';
+const match3or4Hex = `#?[${hexChars}]{3}[${hexChars}]?`;
+const match6or8Hex = `#?[${hexChars}]{6}([${hexChars}]{2})?`;
+
+const nonHexChars = new RegExp(`[^#${hexChars}]`, 'gi');
+const validHexSize = new RegExp(`^${match3or4Hex}$|^${match6or8Hex}$`, 'i');
+
 module.exports = function (hex) {
-	if (
-		typeof hex !== 'string' ||
-		/[^#a-f0-9]/gi.test(hex) ||
-		!/^#?[a-f0-9]{3}[a-f0-9]?$|^#?[a-f0-9]{6}([a-f0-9]{2})?$/i.test(hex)
-	) {
+	if (typeof hex !== 'string' || nonHexChars.test(hex) || !validHexSize.test(hex)) {
 		throw new TypeError('Expected a valid hex string');
 	}
 
@@ -12,12 +16,12 @@ module.exports = function (hex) {
 	let alpha = 255;
 
 	if (hex.length === 8) {
-		alpha = parseInt(hex.substring(6, 8), 16);
+		alpha = parseInt(hex.slice(6, 8), 16);
 		hex = hex.substring(0, 6);
 	}
 
 	if (hex.length === 4) {
-		alpha = parseInt(hex.substring(3, 4).repeat(2), 16);
+		alpha = parseInt(hex.slice(3, 4).repeat(2), 16);
 		hex = hex.substring(0, 3);
 	}
 
