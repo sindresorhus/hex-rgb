@@ -19,14 +19,14 @@ test('rejects', t => {
 });
 
 test('hex', t => {
-	t.is(hexRgb('4183c4').join(','), '65,131,196');
-	t.is(hexRgb('#4183c4').join(','), '65,131,196');
-	t.is(hexRgb('#000').join(','), '0,0,0');
+	t.deepEqual(hexRgb('4183c4'), [65, 131, 196]);
+	t.deepEqual(hexRgb('#4183c4'), [65, 131, 196]);
+	t.deepEqual(hexRgb('#000'), [0, 0, 0]);
 });
 
 test('hex with alpha', t => {
-	t.is(hexRgb('4183c488').join(','), '65,131,196,136');
-	t.is(hexRgb('#4183c488').join(','), '65,131,196,136');
-	t.is(hexRgb('#0008').join(','), '0,0,0,136');
-	t.is(hexRgb('#000f').join(','), '0,0,0');
+	t.deepEqual(hexRgb('4183c488'), [65, 131, 196, 136]);
+	t.deepEqual(hexRgb('#4183c488'), [65, 131, 196, 136]);
+	t.deepEqual(hexRgb('#0008'), [0, 0, 0, 136]);
+	t.deepEqual(hexRgb('#000f'), [0, 0, 0]);
 });
