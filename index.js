@@ -7,7 +7,7 @@ const match6or8Hex = `#?[${hexChars}]{6}([${hexChars}]{2})?`;
 const nonHexChars = new RegExp(`[^#${hexChars}]`, 'gi');
 const validHexSize = new RegExp(`^${match3or4Hex}$|^${match6or8Hex}$`, 'i');
 
-module.exports = function (hex) {
+module.exports = function (hex, options = {}) {
 	if (typeof hex !== 'string' || nonHexChars.test(hex) || !validHexSize.test(hex)) {
 		throw new TypeError('Expected a valid hex string');
 	}
@@ -30,5 +30,11 @@ module.exports = function (hex) {
 	}
 
 	const num = parseInt(hex, 16);
-	return [num >> 16, (num >> 8) & 255, num & 255, alpha];
+	const red = num >> 16;
+	const green = (num >> 8) & 255;
+	const blue = num & 255;
+
+	return options.format === 'array' ?
+		[red, green, blue, alpha] :
+		{red, green, blue, alpha};
 };
