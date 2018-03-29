@@ -34,6 +34,8 @@ hexRgb('#4183c488', {format: 'array'});
 //=> [65, 131, 196, 136]
 ```
 
+Version 2 of hex-rgb ES6 template strings. If you require a dependency that is ES5 compatible without needing to be transpiled, you can still use [version 1](https://github.com/sindresorhus/hex-rgb/tree/v1.0.0).
+
 
 ## Related
 
