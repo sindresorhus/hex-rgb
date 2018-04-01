@@ -16,12 +16,12 @@ module.exports = function (hex, options = {}) {
 	let alpha = 255;
 
 	if (hex.length === 8) {
-		alpha = parseInt(hex.slice(6, 8), 16);
+		alpha = parseFloat((parseInt(hex.slice(6, 8), 16) / 255).toFixed(4));
 		hex = hex.substring(0, 6);
 	}
 
 	if (hex.length === 4) {
-		alpha = parseInt(hex.slice(3, 4).repeat(2), 16);
+		alpha = parseFloat((parseInt(hex.slice(3, 4).repeat(2), 16) / 255).toFixed(4));
 		hex = hex.substring(0, 3);
 	}
 

@@ -21,11 +21,11 @@ test('hex; output object', t => {
 	const options = {format: 'object'};
 	t.deepEqual(hexRgb('#4183c4', options), {red: 65, green: 131, blue: 196, alpha: 255});
 	t.deepEqual(hexRgb('#000', options), {red: 0, green: 0, blue: 0, alpha: 255});
-	t.deepEqual(hexRgb('#0008', options), {red: 0, green: 0, blue: 0, alpha: 136});
-	t.deepEqual(hexRgb('4183c488', options), {red: 65, green: 131, blue: 196, alpha: 136});
-	t.deepEqual(hexRgb('#4183c488'), {red: 65, green: 131, blue: 196, alpha: 136});
+	t.deepEqual(hexRgb('#0008', options), {red: 0, green: 0, blue: 0, alpha: 0.5333});
+	t.deepEqual(hexRgb('4183c488', options), {red: 65, green: 131, blue: 196, alpha: 0.5333});
+	t.deepEqual(hexRgb('#4183c488'), {red: 65, green: 131, blue: 196, alpha: 0.5333});
 	t.deepEqual(hexRgb('4183c4'), {red: 65, green: 131, blue: 196, alpha: 255});
-	t.deepEqual(hexRgb('#000f'), {red: 0, green: 0, blue: 0, alpha: 255});
+	t.deepEqual(hexRgb('#000f'), {red: 0, green: 0, blue: 0, alpha: 1});
 });
 
 test('hex; output array', t => {
@@ -33,8 +33,8 @@ test('hex; output array', t => {
 	t.deepEqual(hexRgb('4183c4', options), [65, 131, 196, 255]);
 	t.deepEqual(hexRgb('#4183c4', options), [65, 131, 196, 255]);
 	t.deepEqual(hexRgb('#000', options), [0, 0, 0, 255]);
-	t.deepEqual(hexRgb('4183c488', options), [65, 131, 196, 136]);
-	t.deepEqual(hexRgb('#4183c488', options), [65, 131, 196, 136]);
-	t.deepEqual(hexRgb('#0008', options), [0, 0, 0, 136]);
-	t.deepEqual(hexRgb('#000f', options), [0, 0, 0, 255]);
+	t.deepEqual(hexRgb('4183c488', options), [65, 131, 196, 0.5333]);
+	t.deepEqual(hexRgb('#4183c488', options), [65, 131, 196, 0.5333]);
+	t.deepEqual(hexRgb('#0008', options), [0, 0, 0, 0.5333]);
+	t.deepEqual(hexRgb('#000f', options), [0, 0, 0, 1]);
 });
