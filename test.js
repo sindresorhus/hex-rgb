@@ -26,6 +26,8 @@ test('hex; output object', t => {
 	t.deepEqual(hexRgb('#4183c488'), {red: 65, green: 131, blue: 196, alpha: 0.5333333333333333});
 	t.deepEqual(hexRgb('4183c4'), {red: 65, green: 131, blue: 196, alpha: 255});
 	t.deepEqual(hexRgb('#000f'), {red: 0, green: 0, blue: 0, alpha: 1});
+	t.deepEqual(hexRgb('#22222299'), {red: 34, green: 34, blue: 34, alpha: 0.6});
+	t.deepEqual(hexRgb('#cd2222cc'), {red: 205, green: 34, blue: 34, alpha: 0.8});
 });
 
 test('hex; output array', t => {
