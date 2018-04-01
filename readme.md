@@ -25,13 +25,16 @@ hexRgb('#fff');
 //=> {red: 255, green: 255, blue: 255, alpha: 255}
 
 hexRgb('#22222299');
-//=> {red: 65, green: 131, blue: 196, alpha: 0.6}
+//=> {red: 34, green: 34, blue: 34, alpha: 0.6}
+
+hexRgb('#0006');
+//=> {red: 0, green: 0, blue: 0, alpha: 0.4}
 
 hexRgb('#cd2222cc');
-//=> {red: 0, green: 0, blue: 0, alpha: 0.8}
+//=> {red: 205, green: 34, blue: 34, alpha: 0.8}
 
 hexRgb('#cd2222cc', {format: 'array'});
-//=> [65, 131, 196, 0.8]
+//=> [205, 34, 34, 0.8]
 ```
 
 

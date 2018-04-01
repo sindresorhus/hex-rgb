@@ -21,7 +21,7 @@ test('hex; output object', t => {
 	const options = {format: 'object'};
 	t.deepEqual(hexRgb('#4183c4', options), {red: 65, green: 131, blue: 196, alpha: 255});
 	t.deepEqual(hexRgb('#000', options), {red: 0, green: 0, blue: 0, alpha: 255});
-	t.deepEqual(hexRgb('#0008', options), {red: 0, green: 0, blue: 0, alpha: 0.5333333333333333});
+	t.deepEqual(hexRgb('#0006', options), {red: 0, green: 0, blue: 0, alpha: 0.4});
 	t.deepEqual(hexRgb('4183c488', options), {red: 65, green: 131, blue: 196, alpha: 0.5333333333333333});
 	t.deepEqual(hexRgb('#4183c488'), {red: 65, green: 131, blue: 196, alpha: 0.5333333333333333});
 	t.deepEqual(hexRgb('4183c4'), {red: 65, green: 131, blue: 196, alpha: 255});
