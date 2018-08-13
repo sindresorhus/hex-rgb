@@ -36,5 +36,7 @@ module.exports = function (hex, options = {}) {
 
 	return options.format === 'array' ?
 		[red, green, blue, alpha] :
-		{red, green, blue, alpha};
+		options.format === 'text' ?
+			`rgb(${red}, ${green}, ${blue}${alpha === 255 || alpha === 1 ? '' : `, ${alpha}`})` :
+			{red, green, blue, alpha};
 };

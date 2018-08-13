@@ -40,3 +40,14 @@ test('hex; output array', t => {
 	t.deepEqual(hexRgb('#0008', options), [0, 0, 0, 0.5333333333333333]);
 	t.deepEqual(hexRgb('#000f', options), [0, 0, 0, 1]);
 });
+
+test('hex; output string', t => {
+	const options = {format: 'text'};
+	t.deepEqual(hexRgb('4183c4', options), 'rgb(65, 131, 196)');
+	t.deepEqual(hexRgb('#4183c4', options), 'rgb(65, 131, 196)');
+	t.deepEqual(hexRgb('#000', options), 'rgb(0, 0, 0)');
+	t.deepEqual(hexRgb('4183c488', options), 'rgb(65, 131, 196, 0.5333333333333333)');
+	t.deepEqual(hexRgb('#4183c488', options), 'rgb(65, 131, 196, 0.5333333333333333)');
+	t.deepEqual(hexRgb('#0008', options), 'rgb(0, 0, 0, 0.5333333333333333)');
+	t.deepEqual(hexRgb('#000f', options), 'rgb(0, 0, 0)');
+});
