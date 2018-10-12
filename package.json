@@ -1,35 +1,46 @@
 {
-	"name": "hex-rgb",
-	"version": "3.0.0",
-	"description": "Convert HEX color to RGBA",
-	"license": "MIT",
-	"repository": "sindresorhus/hex-rgb",
-	"author": {
-		"name": "Sindre Sorhus",
-		"email": "sindresorhus@gmail.com",
-		"url": "sindresorhus.com"
-	},
-	"engines": {
-		"node": ">=6"
-	},
-	"scripts": {
-		"test": "xo && ava"
-	},
-	"files": [
-		"index.js"
-	],
-	"keywords": [
-		"hex",
-		"rgb",
-		"rgba",
-		"color",
-		"colour",
-		"convert",
-		"conversion",
-		"converter"
-	],
-	"devDependencies": {
-		"ava": "*",
-		"xo": "*"
-	}
+  "name": "hex-rgb",
+  "version": "3.0.0",
+  "description": "Convert HEX color to RGBA",
+  "license": "MIT",
+  "repository": "sindresorhus/hex-rgb",
+  "author": {
+    "name": "Sindre Sorhus",
+    "email": "sindresorhus@gmail.com",
+    "url": "sindresorhus.com"
+  },
+  "engines": {
+    "node": ">=6"
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ],
+  "scripts": {
+    "test": "xo && ava",
+    "build": "babel index.js --out-dir dist"
+  },
+  "files": [
+    "index.js"
+  ],
+  "main": "dist/index.js",
+  "keywords": [
+    "hex",
+    "rgb",
+    "rgba",
+    "color",
+    "colour",
+    "convert",
+    "conversion",
+    "converter"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "ava": "*",
+    "xo": "*"
+  }
 }
