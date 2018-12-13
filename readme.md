@@ -16,13 +16,13 @@ $ npm install hex-rgb
 const hexRgb = require('hex-rgb');
 
 hexRgb('4183c4');
-//=> {red: 65, green: 131, blue: 196, alpha: 255}
+//=> {red: 65, green: 131, blue: 196, alpha: 1}
 
 hexRgb('#4183c4');
-//=> {red: 65, green: 131, blue: 196, alpha: 255}
+//=> {red: 65, green: 131, blue: 196, alpha: 1}
 
 hexRgb('#fff');
-//=> {red: 255, green: 255, blue: 255, alpha: 255}
+//=> {red: 255, green: 255, blue: 255, alpha: 1}
 
 hexRgb('#22222299');
 //=> {red: 34, green: 34, blue: 34, alpha: 0.6}

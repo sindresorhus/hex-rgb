@@ -13,7 +13,7 @@ module.exports = function (hex, options = {}) {
 	}
 
 	hex = hex.replace(/^#/, '');
-	let alpha = 255;
+	let alpha = 1;
 
 	if (hex.length === 8) {
 		alpha = parseInt(hex.slice(6, 8), 16) / 255;
