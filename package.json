@@ -29,7 +29,7 @@
 		"converter"
 	],
 	"devDependencies": {
-		"ava": "^0.25.0",
-		"xo": "^0.23.0"
+		"ava": "^1.2.0",
+		"xo": "^0.24.0"
 	}
 }
