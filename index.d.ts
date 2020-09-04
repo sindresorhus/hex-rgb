@@ -1,6 +1,11 @@
 declare namespace hexRgb {
 	interface Options {
-		readonly format?: 'array' | 'css';
+		/**
+		The RGB output format.
+
+		@default 'object'
+		*/
+		readonly format?: 'object' | 'array' | 'css';
 	}
 
 	interface RgbaObject {
