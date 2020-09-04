@@ -1,6 +1,6 @@
 declare namespace hexRgb {
 	interface Options {
-		readonly format?: 'array';
+		readonly format?: 'array' | 'css';
 	}
 
 	interface RgbaObject {
@@ -42,9 +42,12 @@ hexRgb('#cd2222cc');
 
 hexRgb('#cd2222cc', {format: 'array'});
 //=> [205, 34, 34, 0.8]
+
+hexRgb('#cd2222cc', {format: 'css'});
+//=> 'rgba(205, 34, 34, 0.8)'
 ```
 */
 declare function hexRgb(hex: string): hexRgb.RgbaObject;
-declare function hexRgb(hex: string, options: hexRgb.Options): hexRgb.RgbaTuple;
+declare function hexRgb(hex: string, options: hexRgb.Options): hexRgb.RgbaTuple | string;
 
 export = hexRgb;

@@ -35,6 +35,9 @@ hexRgb('#cd2222cc');
 
 hexRgb('#cd2222cc', {format: 'array'});
 //=> [205, 34, 34, 0.8]
+
+hexRgb('#cd2222cc', {format: 'css'});
+//=> 'rgba(205, 34, 34, 0.8)'
 ```
 
 

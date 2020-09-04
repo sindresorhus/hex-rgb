@@ -33,7 +33,13 @@ module.exports = (hex, options = {}) => {
 	const green = (num >> 8) & 255;
 	const blue = num & 255;
 
-	return options.format === 'array' ?
-		[red, green, blue, alpha] :
-		{red, green, blue, alpha};
+	if (options.format === 'array') {
+		return [red, green, blue, alpha];
+	}
+
+	if (options.format === 'css') {
+		return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
+	}
+
+	return {red, green, blue, alpha};
 };
