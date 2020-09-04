@@ -38,7 +38,7 @@ module.exports = (hex, options = {}) => {
 	}
 
 	if (options.format === 'css') {
-		return `rgba(${red}, ${green}, ${blue}, ${alpha})`;
+		return `rgb(${red} ${green} ${blue} / ${alpha * 100}%)`;
 	}
 
 	return {red, green, blue, alpha};

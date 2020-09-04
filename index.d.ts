@@ -49,10 +49,13 @@ hexRgb('#cd2222cc', {format: 'array'});
 //=> [205, 34, 34, 0.8]
 
 hexRgb('#cd2222cc', {format: 'css'});
-//=> 'rgba(205, 34, 34, 0.8)'
+//=> 'rgb(205 34 34 / 80%)'
 ```
 */
 declare function hexRgb(hex: string): hexRgb.RgbaObject;
-declare function hexRgb(hex: string, options: hexRgb.Options): hexRgb.RgbaTuple | string;
+
+declare function hexRgb(hex: string, options: hexRgb.Options): hexRgb.RgbaObject;
+declare function hexRgb(hex: string, options: hexRgb.Options): hexRgb.RgbaTuple;
+declare function hexRgb(hex: string, options: hexRgb.Options): string;
 
 export = hexRgb;
