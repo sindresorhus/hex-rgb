@@ -54,8 +54,8 @@ hexRgb('#cd2222cc', {format: 'css'});
 */
 declare function hexRgb(hex: string): hexRgb.RgbaObject;
 
-declare function hexRgb(hex: string, options: hexRgb.Options): hexRgb.RgbaObject;
-declare function hexRgb(hex: string, options: hexRgb.Options): hexRgb.RgbaTuple;
-declare function hexRgb(hex: string, options: hexRgb.Options): string;
+declare function hexRgb(hex: string, options: hexRgb.Options & {format: 'object'}): hexRgb.RgbaObject;
+declare function hexRgb(hex: string, options: hexRgb.Options & {format: 'array'}): hexRgb.RgbaTuple;
+declare function hexRgb(hex: string, options: hexRgb.Options & {format: 'css'}): string;
 
 export = hexRgb;
