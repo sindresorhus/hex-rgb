@@ -38,7 +38,7 @@ module.exports = (hex, options = {}) => {
 	}
 
 	if (options.format === 'css') {
-		return `rgb(${red} ${green} ${blue} / ${alpha * 100}%)`;
+		return `rgb(${red} ${green} ${blue} / ${Number((alpha * 100).toFixed(2))}%)`;
 	}
 
 	return {red, green, blue, alpha};
