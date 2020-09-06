@@ -2,6 +2,8 @@ declare namespace hexRgb {
 	interface Options {
 		/**
 		The RGB output format.
+		
+		Please note that when using the `css` format, the value of the alpha channel is rounded to two decimal places.
 
 		@default 'object'
 		*/
@@ -51,8 +53,6 @@ hexRgb('#cd2222cc', {format: 'array'});
 hexRgb('#cd2222cc', {format: 'css'});
 //=> 'rgb(205 34 34 / 80%)'
 ```
-
-Please note that when using the `css` format, the value of the alpha channel is rounded to two decimal places.
 */
 declare function hexRgb(hex: string): hexRgb.RgbaObject;
 
