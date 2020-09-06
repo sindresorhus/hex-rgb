@@ -43,11 +43,11 @@ test('hex; output array', t => {
 
 test('hex; output css', t => {
 	const options = {format: 'css'};
-	t.deepEqual(hexRgb('4183c4', options), 'rgb(65 131 196 / 100%)');
-	t.deepEqual(hexRgb('#4183c4', options), 'rgb(65 131 196 / 100%)');
-	t.deepEqual(hexRgb('#000', options), 'rgb(0 0 0 / 100%)');
+	t.deepEqual(hexRgb('4183c4', options), 'rgb(65 131 196)');
+	t.deepEqual(hexRgb('#4183c4', options), 'rgb(65 131 196)');
+	t.deepEqual(hexRgb('#000', options), 'rgb(0 0 0)');
 	t.deepEqual(hexRgb('4183c488', options), 'rgb(65 131 196 / 53.33%)');
 	t.deepEqual(hexRgb('#4183c488', options), 'rgb(65 131 196 / 53.33%)');
 	t.deepEqual(hexRgb('#0008', options), 'rgb(0 0 0 / 53.33%)');
-	t.deepEqual(hexRgb('#000f', options), 'rgb(0 0 0 / 100%)');
+	t.deepEqual(hexRgb('#000f', options), 'rgb(0 0 0)');
 });

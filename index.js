@@ -15,12 +15,12 @@ module.exports = (hex, options = {}) => {
 	let alpha = 1;
 
 	if (hex.length === 8) {
-		alpha = parseInt(hex.slice(6, 8), 16) / 255;
+		alpha = Number.parseInt(hex.slice(6, 8), 16) / 255;
 		hex = hex.slice(0, 6);
 	}
 
 	if (hex.length === 4) {
-		alpha = parseInt(hex.slice(3, 4).repeat(2), 16) / 255;
+		alpha = Number.parseInt(hex.slice(3, 4).repeat(2), 16) / 255;
 		hex = hex.slice(0, 3);
 	}
 
@@ -28,17 +28,18 @@ module.exports = (hex, options = {}) => {
 		hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
 	}
 
-	const num = parseInt(hex, 16);
-	const red = num >> 16;
-	const green = (num >> 8) & 255;
-	const blue = num & 255;
+	const number = Number.parseInt(hex, 16);
+	const red = number >> 16;
+	const green = (number >> 8) & 255;
+	const blue = number & 255;
 
 	if (options.format === 'array') {
 		return [red, green, blue, alpha];
 	}
 
 	if (options.format === 'css') {
-		return `rgb(${red} ${green} ${blue} / ${Number((alpha * 100).toFixed(2))}%)`;
+		const alphaString = alpha === 1 ? '' : ` / ${Number((alpha * 100).toFixed(2))}%`;
+		return `rgb(${red} ${green} ${blue}${alphaString})`;
 	}
 
 	return {red, green, blue, alpha};

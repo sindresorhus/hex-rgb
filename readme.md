@@ -1,14 +1,12 @@
-# hex-rgb [![Build Status](https://travis-ci.org/sindresorhus/hex-rgb.svg?branch=master)](https://travis-ci.org/sindresorhus/hex-rgb)
+# hex-rgb [![Build Status](https://travis-ci.com/sindresorhus/hex-rgb.svg?branch=master)](https://travis-ci.com/github/sindresorhus/hex-rgb)
 
 > Convert HEX color to RGBA
-
 
 ## Install
 
 ```
 $ npm install hex-rgb
 ```
-
 
 ## Usage
 
@@ -38,16 +36,35 @@ hexRgb('#cd2222cc', {format: 'array'});
 
 hexRgb('#cd2222cc', {format: 'css'});
 //=> 'rgb(205 34 34 / 80%)'
+
+hexRgb('#000', {format: 'css'});
+//=> 'rgb(0 0 0)'
 ```
 
-Please note that when using the `css` format, the value of the alpha channel is rounded to two decimal places.
+## API
 
+### hexRgb(hex, options?)
+
+#### hex
+
+Type: `string`
+
+The color in HEX format. Leading `#` is optional.
+
+#### options
+
+Type: `object`
+
+##### format
+
+Type: `string`\
+Values: `'object' | 'array' | 'css'`\
+Defaults: `'object'`
+
+The RGB output format.
+
+Note that when using the `css` format, the value of the alpha channel is rounded to two decimal places.
 
 ## Related
 
 See [rgb-hex](https://github.com/sindresorhus/rgb-hex) for the inverse.
-
-
-## License
-
-MIT © [Sindre Sorhus](https://sindresorhus.com)

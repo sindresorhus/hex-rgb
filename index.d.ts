@@ -2,8 +2,8 @@ declare namespace hexRgb {
 	interface Options {
 		/**
 		The RGB output format.
-		
-		Please note that when using the `css` format, the value of the alpha channel is rounded to two decimal places.
+
+		Note that when using the `css` format, the value of the alpha channel is rounded to two decimal places.
 
 		@default 'object'
 		*/
@@ -17,13 +17,14 @@ declare namespace hexRgb {
 		alpha: number;
 	}
 
+	// TODO: Use named tuples here when TS 4 is more commonly used.
 	type RgbaTuple = [number, number, number, number];
 }
 
 /**
 Convert HEX color to RGBA.
 
-@param hex
+@param hex - The color in HEX format. Leading `#` is optional.
 
 @example
 ```
@@ -52,10 +53,12 @@ hexRgb('#cd2222cc', {format: 'array'});
 
 hexRgb('#cd2222cc', {format: 'css'});
 //=> 'rgb(205 34 34 / 80%)'
+
+hexRgb('#000', {format: 'css'});
+//=> 'rgb(0 0 0)'
 ```
 */
 declare function hexRgb(hex: string): hexRgb.RgbaObject;
-
 declare function hexRgb(hex: string, options: hexRgb.Options & {format: 'object'}): hexRgb.RgbaObject;
 declare function hexRgb(hex: string, options: hexRgb.Options & {format: 'array'}): hexRgb.RgbaTuple;
 declare function hexRgb(hex: string, options: hexRgb.Options & {format: 'css'}): string;
