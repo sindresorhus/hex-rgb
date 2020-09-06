@@ -35,7 +35,12 @@ hexRgb('#cd2222cc');
 
 hexRgb('#cd2222cc', {format: 'array'});
 //=> [205, 34, 34, 0.8]
+
+hexRgb('#cd2222cc', {format: 'css'});
+//=> 'rgb(205 34 34 / 80%)'
 ```
+
+Please note that when using the `css` format, the value of the alpha channel is rounded to two decimal places.
 
 
 ## Related

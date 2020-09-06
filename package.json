@@ -27,7 +27,8 @@
 		"colour",
 		"convert",
 		"conversion",
-		"converter"
+		"converter",
+		"css"
 	],
 	"devDependencies": {
 		"ava": "^1.4.1",

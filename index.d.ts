@@ -1,6 +1,13 @@
 declare namespace hexRgb {
 	interface Options {
-		readonly format?: 'array';
+		/**
+		The RGB output format.
+		
+		Please note that when using the `css` format, the value of the alpha channel is rounded to two decimal places.
+
+		@default 'object'
+		*/
+		readonly format?: 'object' | 'array' | 'css';
 	}
 
 	interface RgbaObject {
@@ -42,9 +49,15 @@ hexRgb('#cd2222cc');
 
 hexRgb('#cd2222cc', {format: 'array'});
 //=> [205, 34, 34, 0.8]
+
+hexRgb('#cd2222cc', {format: 'css'});
+//=> 'rgb(205 34 34 / 80%)'
 ```
 */
 declare function hexRgb(hex: string): hexRgb.RgbaObject;
-declare function hexRgb(hex: string, options: hexRgb.Options): hexRgb.RgbaTuple;
+
+declare function hexRgb(hex: string, options: hexRgb.Options & {format: 'object'}): hexRgb.RgbaObject;
+declare function hexRgb(hex: string, options: hexRgb.Options & {format: 'array'}): hexRgb.RgbaTuple;
+declare function hexRgb(hex: string, options: hexRgb.Options & {format: 'css'}): string;
 
 export = hexRgb;
