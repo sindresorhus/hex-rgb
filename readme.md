@@ -1,4 +1,4 @@
-# hex-rgb [![Build Status](https://travis-ci.com/sindresorhus/hex-rgb.svg?branch=master)](https://travis-ci.com/github/sindresorhus/hex-rgb)
+# hex-rgb
 
 > Convert HEX color to RGBA
 
