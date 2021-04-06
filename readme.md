@@ -75,7 +75,8 @@ Note that when using the `css` format, the value of the alpha channel is rounded
 
 Type: `number`
 
-The Alpha value to be applied with the first priority.
+Note that when 'alpha' option is added, the value of alpha in the hex code is overwritten.
+
 This value must be in the range 0 to 1.
 
 ## Related

@@ -9,6 +9,11 @@ declare namespace hexRgb {
 		*/
 		readonly format?: 'object' | 'array' | 'css';
 
+		/**
+		Note that when 'alpha' option is added, the value of alpha in the hex code is overwritten.
+
+		This value must be in the range 0 to 1.
+		*/
 		readonly alpha?: number;
 	}
 
