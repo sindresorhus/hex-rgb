@@ -79,7 +79,7 @@ Set the alpha of the color.
 
 This overrides any existing alpha component in the Hex color string. For example, the `99` in `#22222299`.
 
-This value must be in the range 0 to 1.
+The number must be in the range 0 to 1.
 
 ## Related
 
