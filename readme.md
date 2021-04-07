@@ -75,7 +75,9 @@ Note that when using the `css` format, the value of the alpha channel is rounded
 
 Type: `number`
 
-Note that when 'alpha' option is added, the value of alpha in the hex code is overwritten.
+Set the alpha of the color.
+
+This overrides any existing alpha component in the Hex color string. For example, the `99` in `#22222299`.
 
 This value must be in the range 0 to 1.
 
