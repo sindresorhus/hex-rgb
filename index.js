@@ -12,15 +12,15 @@ module.exports = (hex, options = {}) => {
 	}
 
 	hex = hex.replace(/^#/, '');
-	let alpha = 1;
+	let alphaFromHex = 1;
 
 	if (hex.length === 8) {
-		alpha = Number.parseInt(hex.slice(6, 8), 16) / 255;
+		alphaFromHex = Number.parseInt(hex.slice(6, 8), 16) / 255;
 		hex = hex.slice(0, 6);
 	}
 
 	if (hex.length === 4) {
-		alpha = Number.parseInt(hex.slice(3, 4).repeat(2), 16) / 255;
+		alphaFromHex = Number.parseInt(hex.slice(3, 4).repeat(2), 16) / 255;
 		hex = hex.slice(0, 3);
 	}
 
@@ -32,6 +32,7 @@ module.exports = (hex, options = {}) => {
 	const red = number >> 16;
 	const green = (number >> 8) & 255;
 	const blue = number & 255;
+	const alpha = typeof options.alpha === 'number' ? options.alpha : alphaFromHex;
 
 	if (options.format === 'array') {
 		return [red, green, blue, alpha];

@@ -8,6 +8,15 @@ declare namespace hexRgb {
 		@default 'object'
 		*/
 		readonly format?: 'object' | 'array' | 'css';
+
+		/**
+		Set the alpha of the color.
+
+		This overrides any existing alpha component in the Hex color string. For example, the `99` in `#22222299`.
+
+		The number must be in the range 0 to 1.
+		*/
+		readonly alpha?: number;
 	}
 
 	interface RgbaObject {
@@ -56,6 +65,12 @@ hexRgb('#cd2222cc', {format: 'css'});
 
 hexRgb('#000', {format: 'css'});
 //=> 'rgb(0 0 0)'
+
+hexRgb('#22222299', {alpha: 1});
+//=> {red: 34, green: 34, blue: 34, alpha: 1}
+
+hexRgb('#fff', {alpha: 0.5});
+//=> {red: 255, green: 255, blue: 255, alpha: 0.5}
 ```
 */
 declare function hexRgb(hex: string): hexRgb.RgbaObject;
