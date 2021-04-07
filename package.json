@@ -1,6 +1,6 @@
 {
 	"name": "hex-rgb",
-	"version": "4.2.0",
+	"version": "4.3.0",
 	"description": "Convert HEX color to RGBA",
 	"license": "MIT",
 	"repository": "sindresorhus/hex-rgb",
