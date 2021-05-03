@@ -1,10 +1,12 @@
 import test from 'ava';
-import hexRgb from '.';
+import hexRgb from './index.js';
 
 const reject = (t, string) => {
 	return t.throws(() => {
 		hexRgb(string);
-	}, TypeError).message;
+	}, {
+		instanceOf: TypeError
+	}).message;
 };
 
 test('rejects', t => {
@@ -49,13 +51,13 @@ test('hex; output array', t => {
 
 test('hex; output css', t => {
 	const options = {format: 'css'};
-	t.deepEqual(hexRgb('4183c4', options), 'rgb(65 131 196)');
-	t.deepEqual(hexRgb('#4183c4', options), 'rgb(65 131 196)');
-	t.deepEqual(hexRgb('#4183c4', {...options, alpha: 0.5}), 'rgb(65 131 196 / 50%)');
-	t.deepEqual(hexRgb('#000', options), 'rgb(0 0 0)');
-	t.deepEqual(hexRgb('4183c488', options), 'rgb(65 131 196 / 53.33%)');
-	t.deepEqual(hexRgb('#4183c488', options), 'rgb(65 131 196 / 53.33%)');
-	t.deepEqual(hexRgb('4183c488', {...options, alpha: 1}), 'rgb(65 131 196)');
-	t.deepEqual(hexRgb('#0008', options), 'rgb(0 0 0 / 53.33%)');
-	t.deepEqual(hexRgb('#000f', options), 'rgb(0 0 0)');
+	t.is(hexRgb('4183c4', options), 'rgb(65 131 196)');
+	t.is(hexRgb('#4183c4', options), 'rgb(65 131 196)');
+	t.is(hexRgb('#4183c4', {...options, alpha: 0.5}), 'rgb(65 131 196 / 50%)');
+	t.is(hexRgb('#000', options), 'rgb(0 0 0)');
+	t.is(hexRgb('4183c488', options), 'rgb(65 131 196 / 53.33%)');
+	t.is(hexRgb('#4183c488', options), 'rgb(65 131 196 / 53.33%)');
+	t.is(hexRgb('4183c488', {...options, alpha: 1}), 'rgb(65 131 196)');
+	t.is(hexRgb('#0008', options), 'rgb(0 0 0 / 53.33%)');
+	t.is(hexRgb('#000f', options), 'rgb(0 0 0)');
 });

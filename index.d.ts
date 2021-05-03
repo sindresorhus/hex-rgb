@@ -1,34 +1,38 @@
-declare namespace hexRgb {
-	interface Options {
-		/**
-		The RGB output format.
+/* eslint-disable no-redeclare */
 
-		Note that when using the `css` format, the value of the alpha channel is rounded to two decimal places.
+export interface Options {
+	/**
+	The RGB output format.
 
-		@default 'object'
-		*/
-		readonly format?: 'object' | 'array' | 'css';
+	Note that when using the `css` format, the value of the alpha channel is rounded to two decimal places.
 
-		/**
-		Set the alpha of the color.
+	@default 'object'
+	*/
+	readonly format?: 'object' | 'array' | 'css';
 
-		This overrides any existing alpha component in the Hex color string. For example, the `99` in `#22222299`.
+	/**
+	Set the alpha of the color.
 
-		The number must be in the range 0 to 1.
-		*/
-		readonly alpha?: number;
-	}
+	This overrides any existing alpha component in the Hex color string. For example, the `99` in `#22222299`.
 
-	interface RgbaObject {
-		red: number;
-		green: number;
-		blue: number;
-		alpha: number;
-	}
-
-	// TODO: Use named tuples here when TS 4 is more commonly used.
-	type RgbaTuple = [number, number, number, number];
+	The number must be in the range 0 to 1.
+	*/
+	readonly alpha?: number;
 }
+
+export interface RgbaObject {
+	red: number;
+	green: number;
+	blue: number;
+	alpha: number;
+}
+
+export type RgbaTuple = [
+	red: number,
+	green: number,
+	blue: number,
+	alpha: number
+];
 
 /**
 Convert HEX color to RGBA.
@@ -37,7 +41,7 @@ Convert HEX color to RGBA.
 
 @example
 ```
-import hexRgb = require('hex-rgb');
+import hexRgb from 'hex-rgb';
 
 hexRgb('4183c4');
 //=> {red: 65, green: 131, blue: 196, alpha: 1}
@@ -73,9 +77,7 @@ hexRgb('#fff', {alpha: 0.5});
 //=> {red: 255, green: 255, blue: 255, alpha: 0.5}
 ```
 */
-declare function hexRgb(hex: string): hexRgb.RgbaObject;
-declare function hexRgb(hex: string, options: hexRgb.Options & {format: 'object'}): hexRgb.RgbaObject;
-declare function hexRgb(hex: string, options: hexRgb.Options & {format: 'array'}): hexRgb.RgbaTuple;
-declare function hexRgb(hex: string, options: hexRgb.Options & {format: 'css'}): string;
-
-export = hexRgb;
+export default function hexRgb(hex: string): RgbaObject;
+export default function hexRgb(hex: string, options: Options & {format: 'object'}): RgbaObject; // eslint-disable-line @typescript-eslint/unified-signatures
+export default function hexRgb(hex: string, options: Options & {format: 'array'}): RgbaTuple;
+export default function hexRgb(hex: string, options: Options & {format: 'css'}): string;

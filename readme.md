@@ -11,7 +11,7 @@ $ npm install hex-rgb
 ## Usage
 
 ```js
-const hexRgb = require('hex-rgb');
+import hexRgb from 'hex-rgb';
 
 hexRgb('4183c4');
 //=> {red: 65, green: 131, blue: 196, alpha: 1}
