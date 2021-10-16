@@ -26,7 +26,7 @@
 	"scripts": {
 		"test": "xo && ava && tsd",
 		"build": "rollup index.js --file index.cjs --format cjs",
-		"prepublishOnly": "npm run build && node prepublish.js"
+		"prepublishOnly": "npm run build && node prepublish.cjs"
 	},
 	"files": [
 		"index.js",
