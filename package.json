@@ -14,18 +14,24 @@
 		"url": "https://sindresorhus.com"
 	},
 	"type": "module",
-	"exports": "./index.js",
+	"exports": {
+		".": {
+			"import": "./index.js",
+			"require": "./index.cjs"
+		}
+	},
 	"engines": {
 		"node": ">=12"
 	},
 	"scripts": {
 		"test": "xo && ava && tsd",
 		"build": "rollup index.js --file index.cjs --format cjs",
-		"prepublishOnly": "npm run build"
+		"prepublishOnly": "npm run build && node prepublish.js"
 	},
 	"files": [
 		"index.js",
-		"index.d.ts"
+		"index.d.ts",
+		"index.cjs"
 	],
 	"keywords": [
 		"hex",
