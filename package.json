@@ -1,5 +1,5 @@
 {
-	"name": "hex-rgb",
+	"name": "hex-rgb-js",
 	"version": "5.0.0",
 	"description": "Convert HEX color to RGBA",
 	"module": "./index.js",
