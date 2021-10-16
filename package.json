@@ -2,6 +2,9 @@
 	"name": "hex-rgb",
 	"version": "5.0.0",
 	"description": "Convert HEX color to RGBA",
+	"module": "./index.js",
+	"types": "./index.d.ts",
+	"main": "./index.cjs",
 	"license": "MIT",
 	"repository": "sindresorhus/hex-rgb",
 	"funding": "https://github.com/sponsors/sindresorhus",
@@ -16,7 +19,9 @@
 		"node": ">=12"
 	},
 	"scripts": {
-		"test": "xo && ava && tsd"
+		"test": "xo && ava && tsd",
+		"build": "rollup index.js --file index.cjs --format cjs",
+		"prepublishOnly": "npm run build"
 	},
 	"files": [
 		"index.js",
@@ -35,6 +40,7 @@
 	],
 	"devDependencies": {
 		"ava": "^3.15.0",
+		"rollup": "^2.58.0",
 		"tsd": "^0.14.0",
 		"xo": "^0.39.1"
 	}
